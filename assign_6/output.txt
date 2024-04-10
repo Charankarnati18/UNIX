@@ -1,0 +1,50 @@
+comm file1.txt file2.txt
+		Australia
+		Asia
+		Africa
+Antarctica
+	Atlantic Ocean
+	Arctic Ocean
+Europe
+North America
+	Pacific Ocean
+	Indian Ocean
+	Antarctic Ocean
+South America
+
+sudo chown student:adm file1.txt
+
+sudo chgrp adm file1.txt
+
+dd if=file1.txt of=output_file.txt
+
+diff file1.txt file2.txt
+4,7c4,8
+< Antarctica
+< Europe
+< North America
+< South America
+---
+> Atlantic Ocean
+> Arctic Ocean
+> Pacific Ocean
+> Indian Ocean
+> Antarctic Ocean
+
+finger student
+
+find output_file.txt
+output_file.txt
+
+lock file1.txt
+
+ln -s file1.txt symbolic_link.txt
+ln file2.txt hard_link.txt
+
+lp file2.txt
+
+lpstat -p
+
+mesg y
+
+ftp vsftpd.com 
