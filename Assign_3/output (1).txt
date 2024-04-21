@@ -1,0 +1,2 @@
+Linked List: 30 -> 20 -> 10 -> NULL
+20 found in the linked list.

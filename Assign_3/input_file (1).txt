@@ -1,0 +1,81 @@
+// insert.c
+#include "linkedlist.h"
+#include <stdlib.h>
+
+void insertAtBegin(struct Node** head, int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = *head;
+    *head = newNode;
+}
+
+
+#include "linkedlist.h"
+#include <stddef.h>
+
+int search(struct Node* head, int target) {
+    struct Node* current = head;
+    while (current != NULL) {
+        if (current->data == target)
+            return 1; 
+        current = current->next;
+    }
+    return 0; 
+}
+
+
+#include "linkedlist.h"
+#include <stddef.h>
+#include <stddef.h>
+#include <stdio.h>
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+
+//main.c
+#include "linkedlist.h"
+#include <stdio.h>
+#include <stddef.h>
+
+int main() {
+    struct Node* head = NULL;
+
+    insertAtBegin(&head, 10);
+    insertAtBegin(&head, 20);
+    insertAtBegin(&head, 30);
+
+    printf("Linked List: ");
+    printList(head);
+
+    int target = 20;
+    if (search(head, target))
+        printf("%d found in the linked list.\n", target);
+    else
+        printf("%d not found in the linked list.\n", target);
+
+    return 0;
+}
+
+//header.h
+
+
+
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+void insertAtBegin(struct Node** head, int data);
+int search(struct Node* head, int target);
+void printList(struct Node* head);
+
+#endif 
